@@ -23,13 +23,13 @@ void ReadThread()
 {
 	for (int i = 0; i < 150; i++)
 	{
-    //acquire a shared_lock (read lock) before iterating.
+		//acquire a shared_lock (read lock) before iterating.
 		std::shared_lock<shared_mutex> lock = cmap.getSharedLock();
 		for (auto it : cmap)
 		{
 			std::cout << "read : " << it.second << std::endl;
-			std::this_thread::sleep_for(std::chrono::seconds(1));
 		}
+		std::this_thread::sleep_for(std::chrono::seconds(1));
 	}
 }
 
