@@ -4,10 +4,10 @@
 #include <shared_mutex>
 
 /*
-	Very simple header only implementation of a ConcurrentMap.
-	Use "safe" variants of methods when performing concurrent operations.
-	Acquire a shared_lock for thread safe iterration.
-	Acquire a unique_lock if you want to iterate and delete
+Very simple header only implementation of a ConcurrentMap.
+Use "safe" variants of methods when performing concurrent operations.
+Acquire a shared_lock for thread safe iterration.
+Acquire a unique_lock if you want to iterate and delete
 */
 
 template<typename key, typename value>
