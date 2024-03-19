@@ -29,7 +29,7 @@ public:
 	}
 	
 	/*Thread safe erase operation. Acquires unique lock.*/
-	void safeErase(std::map<key, value>::iterator it)
+	void safeErase(typename std::map<key, value>::iterator it)
 	{
 		std::unique_lock<std::shared_mutex> lg(lock);
 		std::map<key, value>::erase(it);
